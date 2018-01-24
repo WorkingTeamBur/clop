@@ -1,0 +1,34 @@
+package com.kjkksjc.clop.adapters;
+
+
+import android.content.Context;
+
+import com.kjkksjc.clop.WheelAdapter;
+
+
+public class AdapterWheel extends AbstractWheelTextAdapter {
+
+    // Source adapter
+    private WheelAdapter adapter;
+
+    public AdapterWheel(Context context, WheelAdapter adapter) {
+        super(context);
+
+        this.adapter = adapter;
+    }
+
+    public WheelAdapter getAdapter() {
+        return adapter;
+    }
+
+    @Override
+    public int getItemsCount() {
+        return adapter.getItemsCount();
+    }
+
+    @Override
+    protected CharSequence getItemText(int index) {
+        return adapter.getItem(index);
+    }
+
+}
